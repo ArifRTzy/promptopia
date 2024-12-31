@@ -5,9 +5,8 @@ import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 import Form from "@/components/Form";
-import { SessionProvider } from "next-auth/react";
 
-const EditPrompts = () => {
+const EditPrompt = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
@@ -67,10 +66,10 @@ const EditPrompts = () => {
   );
 };
 
-const EditPrompt = ()=>{
-    <Suspense>
-        <EditPrompts/>
-    </Suspense>
-};
-
-export default EditPrompt
+export const EditPrompts = () => {
+    return(
+        <Suspense>
+            <EditPrompt/>
+        </Suspense>
+    )
+}
