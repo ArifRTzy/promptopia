@@ -1,10 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 import Form from "@/components/Form";
+import { SessionProvider } from "next-auth/react";
 
 const EditPrompt = () => {
   const router = useRouter();
@@ -56,7 +57,6 @@ const EditPrompt = () => {
     };
 
   return (
-    <Suspense>
         <Form
           type="Edit"
           post={post}
@@ -64,7 +64,6 @@ const EditPrompt = () => {
           submitting={submitting}
           handleSubmit={updatePrompt}
         />
-    </Suspense>
   );
 };
 

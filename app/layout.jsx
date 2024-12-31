@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import "@/styles/globals.css";
 import Provider from "@/components/Provider";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Promptopia",
@@ -12,14 +13,16 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body>
         <Provider>
-          <div className="main">
-            <div className="gradient" />
-          </div>
+          <Suspense>
+            <div className="main">
+              <div className="gradient" />
+            </div>
 
-          <main className="app">
-            <Nav />
-            {children}
-          </main>
+            <main className="app">
+              <Nav />
+              {children}
+            </main>
+          </Suspense>
         </Provider>
       </body>
     </html>
