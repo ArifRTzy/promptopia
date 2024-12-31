@@ -66,10 +66,12 @@ const EditPrompt = () => {
   );
 };
 
-export const EditPrompts = () => {
+const EditPrompts = () => {
     return(
         <Suspense>
             <EditPrompt/>
         </Suspense>
     )
 }
+
+export default EditPrompts
